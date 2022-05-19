@@ -10,7 +10,7 @@
 #define PBL1_GIANGVIEN_H
 
 #include <string>
-
+#include "menuGV.h"
 using namespace std;
 
 class giangVien {

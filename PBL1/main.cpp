@@ -31,9 +31,9 @@ void xulyMENU(){
 }
 
 int main() {
-/*  Sinhvien *sv= new Sinhvien[2];
-    sv->Nhap(sv,2);
-    sv->Xuat(sv,2);*/
+//    Sinhvien *sv= new Sinhvien[2];
+//    sv->Nhap(sv,2);
+//    sv->Xuat(sv,2);
     menu();
     xulyMENU();
     return 0;
