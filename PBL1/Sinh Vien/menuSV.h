@@ -6,6 +6,6 @@
 #define PBL1_MENUSV_H
 #include "Sinhvien.h"
 #include "../Giang Vien/giangVien.h"
-
-void menuSV();
+int hamchucnang(int&);
+int menuSV();
 #endif //PBL1_MENUSV_H

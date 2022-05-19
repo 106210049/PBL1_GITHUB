@@ -6,7 +6,6 @@
 #include "Sinhvien.h"
 
 using namespace std;
-
 Sinhvien::Sinhvien() // constructor
 {
 

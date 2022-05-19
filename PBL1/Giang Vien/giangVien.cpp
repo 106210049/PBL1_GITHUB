@@ -23,6 +23,7 @@ void giangVien ::nhap() {
     cout << "name class: " ;
     getline(cin, nameClass);
     cout << " css size: "; cin >> classSize;
+
 }
 
 void giangVien ::xuat() {
@@ -41,6 +42,7 @@ void giangVien ::nhapMang(giangVien * Giangvien, int quantity) {
         cout << "Giang vien " << i + 1 << ": ";
         Giangvien[i].nhap();
     }
+    menuGV();
 }
 
 void giangVien ::xuatMang(giangVien *Giangvien, int quantity) {

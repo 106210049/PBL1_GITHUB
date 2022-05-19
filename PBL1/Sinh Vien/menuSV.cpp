@@ -6,8 +6,10 @@
 #include "menuSV.h"
 using namespace std;
 
-int chucnang(Sinhvien *sv, int &chucnang, int &length)
+int hamchucnang(int &chucnang)
 {
+    int length=2;
+    Sinhvien *sv=new Sinhvien[length];
     Chucnang:
     switch(chucnang)
     {
@@ -19,6 +21,7 @@ int chucnang(Sinhvien *sv, int &chucnang, int &length)
             break;
         case 2:
             sv->Arrangeforgpa(sv,length);
+            cout<<"Chuc nang 2 da duoc goi"<<endl;
             break;
         case 3:
             sv->Arrangeformssv(sv,length);
@@ -48,11 +51,11 @@ int chucnang(Sinhvien *sv, int &chucnang, int &length)
                 return 1;
             }
     }
-    return chucnang;
 }
 
 
-void menuSV(int & chucnang ){
+int menuSV(){
+    int chucnang;
     cout<<"Chon cach sap xep: "<<endl;
     cout<<"================================================"<<endl;
     cout<<"0. Thoat chuong trinh."<<endl;
@@ -65,4 +68,5 @@ void menuSV(int & chucnang ){
     cout<<"7. Xoa thong tin sinh vien theo ma so sinh vien "<<endl;
     cout<<"================================================"<<endl;
     cin>>chucnang;
+    hamchucnang(chucnang);
 }

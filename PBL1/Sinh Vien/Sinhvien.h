@@ -28,5 +28,4 @@ public:
     ~Sinhvien(); // destructor
 };
 
-
 #endif //PBL1_SINHVIEN_H
