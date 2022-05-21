@@ -21,9 +21,8 @@ int chooseGV(){
         cin >> control;
     return control;
 }
-
+giangVien* gv = new giangVien[2];
 void xulyMenu(){
-    giangVien* gv = new giangVien[2];
     switch (chooseGV()) {
         case 1:
             gv->nhapMang(gv,2);

@@ -42,6 +42,6 @@ public:
     void FindAvailableClass(giangVien*, int);
 
 };
-
+//giangVien* gv = new giangVien[2];
 
 #endif //PBL1_GIANGVIEN_H

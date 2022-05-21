@@ -6,10 +6,10 @@
 #include "menuSV.h"
 using namespace std;
 
+Sinhvien *sv=new Sinhvien[2];
 int hamchucnang(int &chucnang)
 {
     int length=2;
-    Sinhvien *sv=new Sinhvien[length];
     Chucnang:
     switch(chucnang)
     {
@@ -37,6 +37,12 @@ int hamchucnang(int &chucnang)
             break;
         case 7:
             sv->XoatheoMSSV(sv,length);
+            break;
+        case 8:
+            sv->Nhap(sv,length);
+            break;
+        case 9:
+            sv->Xuat(sv,length);
             break;
         default:
             cout<<"Khong co chuc nang tuong ung: "<<endl;
@@ -66,6 +72,8 @@ int menuSV(){
     cout<<"5. Tim kiem thong tin sinh vien theo ten: "<<endl;
     cout<<"6. Xep loai cho sinh vien: "<<endl;
     cout<<"7. Xoa thong tin sinh vien theo ma so sinh vien "<<endl;
+    cout<<"8. Nhap thong tin sinh vien: "<<endl;
+    cout<<"9. Xuat thong tin sinh vien: "<<endl;
     cout<<"================================================"<<endl;
     cin>>chucnang;
     hamchucnang(chucnang);
