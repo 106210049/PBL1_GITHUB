@@ -8,40 +8,32 @@
 
 #ifndef PBL1_GIANGVIEN_H
 #define PBL1_GIANGVIEN_H
-
+#include "../Person.h"
 #include <string>
-
+#include "menuGV.h"
 using namespace std;
 
-class giangVien {
+class giangVien : public Person{
     static int count;
-    int id;
-    string name;
-    int day, month, year;
+    unsigned long id;
     int salary;
     string nameClass;
     int classSize;
 
 public:
-    giangVien(int id = NULL, string name = "", int day = NULL, int month = NULL, int year = NULL, int salary = NULL, int classSize = NULL, string nameClass = "" ){
-        this->id= id;
-        this->name = name;
-        this->day = day;
-        this->month = month;
-        this->year = year;
-        this->salary = salary;
-        this->classSize = classSize;
-        this->nameClass = nameClass;
-    }
-
+    giangVien(){};
     void nhap();
     void xuat();
     void nhapMang(giangVien*, int);
     void xuatMang(giangVien*, int);
+    void update_in4(giangVien*, int);
 
+    void outSalary(giangVien*, int);
+    void outSalary_5yearsLater(giangVien*, int);
+    void outStudent(giangVien*);
     void FindAvailableClass(giangVien*, int);
 
 };
-
+//giangVien* gv = new giangVien[2];
 
 #endif //PBL1_GIANGVIEN_H

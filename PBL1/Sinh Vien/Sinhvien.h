@@ -1,12 +1,11 @@
 //
 // Created by HP on 5/17/2022.
 //
-
 #ifndef PBL1_SINHVIEN_H
 #define PBL1_SINHVIEN_H
-
+#include "menuSV.h"
+#include "string.h"
 #include "../Giang Vien/giangVien.h"
-#include "../Person.h"
 
 class Sinhvien: public Person{
     friend class giangVien;
@@ -27,6 +26,5 @@ public:
     Sinhvien(); //constructor
     ~Sinhvien(); // destructor
 };
-
 
 #endif //PBL1_SINHVIEN_H

@@ -6,17 +6,8 @@
 #include "Sinhvien.h"
 
 using namespace std;
-
-Sinhvien::Sinhvien() // constructor
-{
-
-}
-
-Sinhvien::~Sinhvien() // destructor
-{
-//    delete [] sv;
-}
-
+Sinhvien ::Sinhvien() {}
+Sinhvien ::~Sinhvien() {}
 void Sinhvien::timKiemTheoTen(Sinhvien *sv, int &length)
 {
     Sinhvien *arrayFound=new Sinhvien[100];
@@ -204,18 +195,18 @@ void Sinhvien::Nhap(Sinhvien *sv, int length)
         cout<<"\n Nhap diem: ";
         cin>>sv[i].gpa;
     }
+    menuSV();
 }
 
 void Sinhvien::Xuat(Sinhvien *sv, int length)
 {
-    for(int j=0;j<length;j++)
-    {
-        cout<<"----------------------------------------------"<<endl;
-        cout<<"Name of student "<<j<<": "<<sv[j].name<<endl;
-        cout<<"ID of student "<<j<<" : "<<sv[j].mssv<<endl;
-        cout<<"Birthday of student "<< j<<" : "<<sv[j].birth<<endl;
-        cout<<"Department: "<<sv[j].department<<endl;
-        cout<<" Test score "<<j<<" : "<<sv[j].gpa<<endl;
-        cout<<"Xep loai: "<<sv[j].hocluc<<endl;
+    for(int j=0;j<length;j++) {
+        cout << "----------------------------------------------" << endl;
+        cout << "Name of student " << j << ": " << sv[j].name << endl;
+        cout << "ID of student " << j << " : " << sv[j].mssv << endl;
+        cout << "Birthday of student " << j << " : " << sv[j].birth << endl;
+        cout << "Department: " << sv[j].department << endl;
+        cout << " Test score " << j << " : " << sv[j].gpa << endl;
+        cout << "Xep loai: " << sv[j].hocluc << endl;
     }
 }

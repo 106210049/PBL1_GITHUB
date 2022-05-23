@@ -84,17 +84,17 @@ build CMakeFiles/PBL1.dir/Sinh_Vien/Sinhvien.cpp.obj: CXX_COMPILER__PBL1_Debug F
   OBJECT_DIR = CMakeFiles\PBL1.dir
   OBJECT_FILE_DIR = CMakeFiles\PBL1.dir\Sinh_Vien
 
-build CMakeFiles/PBL1.dir/Person.cpp.obj: CXX_COMPILER__PBL1_Debug F$:/00-$ PBL/PBL1/Person.cpp || cmake_object_order_depends_target_PBL1
-  DEP_FILE = CMakeFiles\PBL1.dir\Person.cpp.obj.d
-  FLAGS = -g -std=gnu++1y
-  OBJECT_DIR = CMakeFiles\PBL1.dir
-  OBJECT_FILE_DIR = CMakeFiles\PBL1.dir
-
 build CMakeFiles/PBL1.dir/Giang_Vien/menuGV.cpp.obj: CXX_COMPILER__PBL1_Debug F$:/00-$ PBL/PBL1/Giang$ Vien/menuGV.cpp || cmake_object_order_depends_target_PBL1
   DEP_FILE = CMakeFiles\PBL1.dir\Giang_Vien\menuGV.cpp.obj.d
   FLAGS = -g -std=gnu++1y
   OBJECT_DIR = CMakeFiles\PBL1.dir
   OBJECT_FILE_DIR = CMakeFiles\PBL1.dir\Giang_Vien
+
+build CMakeFiles/PBL1.dir/Person.cpp.obj: CXX_COMPILER__PBL1_Debug F$:/00-$ PBL/PBL1/Person.cpp || cmake_object_order_depends_target_PBL1
+  DEP_FILE = CMakeFiles\PBL1.dir\Person.cpp.obj.d
+  FLAGS = -g -std=gnu++1y
+  OBJECT_DIR = CMakeFiles\PBL1.dir
+  OBJECT_FILE_DIR = CMakeFiles\PBL1.dir
 
 
 # =============================================================================
@@ -104,7 +104,7 @@ build CMakeFiles/PBL1.dir/Giang_Vien/menuGV.cpp.obj: CXX_COMPILER__PBL1_Debug F$
 #############################################
 # Link the executable PBL1.exe
 
-build PBL1.exe: CXX_EXECUTABLE_LINKER__PBL1_Debug CMakeFiles/PBL1.dir/main.cpp.obj CMakeFiles/PBL1.dir/Giang_Vien/giangVien.cpp.obj CMakeFiles/PBL1.dir/Sinh_Vien/menuSV.cpp.obj CMakeFiles/PBL1.dir/Sinh_Vien/Sinhvien.cpp.obj CMakeFiles/PBL1.dir/Person.cpp.obj CMakeFiles/PBL1.dir/Giang_Vien/menuGV.cpp.obj
+build PBL1.exe: CXX_EXECUTABLE_LINKER__PBL1_Debug CMakeFiles/PBL1.dir/main.cpp.obj CMakeFiles/PBL1.dir/Giang_Vien/giangVien.cpp.obj CMakeFiles/PBL1.dir/Sinh_Vien/menuSV.cpp.obj CMakeFiles/PBL1.dir/Sinh_Vien/Sinhvien.cpp.obj CMakeFiles/PBL1.dir/Giang_Vien/menuGV.cpp.obj CMakeFiles/PBL1.dir/Person.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PBL1.dir

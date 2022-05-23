@@ -6,8 +6,10 @@
 #include "menuSV.h"
 using namespace std;
 
-int chucnang(Sinhvien *sv, int &chucnang, int &length)
+Sinhvien *sv=new Sinhvien[2];
+int hamchucnang(int &chucnang)
 {
+    int length=2;
     Chucnang:
     switch(chucnang)
     {
@@ -19,6 +21,7 @@ int chucnang(Sinhvien *sv, int &chucnang, int &length)
             break;
         case 2:
             sv->Arrangeforgpa(sv,length);
+            cout<<"Chuc nang 2 da duoc goi"<<endl;
             break;
         case 3:
             sv->Arrangeformssv(sv,length);
@@ -35,6 +38,12 @@ int chucnang(Sinhvien *sv, int &chucnang, int &length)
         case 7:
             sv->XoatheoMSSV(sv,length);
             break;
+        case 8:
+            sv->Nhap(sv,length);
+            break;
+        case 9:
+            sv->Xuat(sv,length);
+            break;
         default:
             cout<<"Khong co chuc nang tuong ung: "<<endl;
             cout<<"Nhap 1 de tiep tuc: ";
@@ -48,11 +57,11 @@ int chucnang(Sinhvien *sv, int &chucnang, int &length)
                 return 1;
             }
     }
-    return chucnang;
 }
 
 
-void menuSV(int & chucnang ){
+int menuSV(){
+    int chucnang;
     cout<<"Chon cach sap xep: "<<endl;
     cout<<"================================================"<<endl;
     cout<<"0. Thoat chuong trinh."<<endl;
@@ -63,6 +72,9 @@ void menuSV(int & chucnang ){
     cout<<"5. Tim kiem thong tin sinh vien theo ten: "<<endl;
     cout<<"6. Xep loai cho sinh vien: "<<endl;
     cout<<"7. Xoa thong tin sinh vien theo ma so sinh vien "<<endl;
+    cout<<"8. Nhap thong tin sinh vien: "<<endl;
+    cout<<"9. Xuat thong tin sinh vien: "<<endl;
     cout<<"================================================"<<endl;
     cin>>chucnang;
+    hamchucnang(chucnang);
 }

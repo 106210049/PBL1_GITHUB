@@ -10,7 +10,7 @@
 using namespace std;
 
 class Person {
-public:
+protected:
     char name[30];
     string birth,department,sex;
 };
