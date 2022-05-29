@@ -14,7 +14,7 @@ void giangVien ::nhap() {
     cout << "id: " ; cin >> id;
     cin.ignore();
     cout << "name: " ;
-    cin.getline(name, 30);
+    cin.getline(name, 100);
     cout << "birthday: " ;
     getline(cin, birth);
     cout << "salary: " ; cin >> salary;
@@ -35,12 +35,16 @@ void giangVien ::xuat() {
     cout << "----------------------------------------------------------" << endl << endl;
 }
 
-void giangVien ::nhapMang(giangVien * Giangvien, int quantity) {
-    cout << endl << "Vui long nhap theo trinh tu!!!" << endl;
-    for (int i = 0; i < quantity; i++){
-        cout << "Giang vien " << i + 1 << ": ";
-        Giangvien[i].nhap();
-    }
+void giangVien ::nhapMang(giangVien * Giangvien, int &quantity) {
+    do{
+        char option;
+        cout << "nhap thong tin giang vien thu " << quantity << ": " << endl;
+        Giangvien[quantity - 1].nhap();
+        cout << "Ban co muon nhap them- nhan 'c' de tiep tuc- nhan 'k' de thoat !!" << endl;
+        cin >> option;
+        if (option == 'k') break;
+        else quantity++;
+    } while (true);
     menuGV();
 }
 
@@ -74,25 +78,44 @@ void giangVien ::update_in4(giangVien *Giangvien, int quantity) {
 
 void giangVien ::outSalary(giangVien *Giangvien, int quantity) {
     unsigned long ID;
-    cout << "nhap ID can sua: ";
+    cout << "nhap ID: ";
     cin >> ID;
     for (int i = 0; i < quantity; i++){
-        if (ID == Giangvien->id){
-            cout << "Luong hien tai cua ban: " << Giangvien->salary;
+        if (ID == Giangvien[i].id){
+            cout << "Luong hien tai cua ban: " << Giangvien[i].salary << endl;
             break;
         }
     }
 }
 
+void giangVien ::xoa_Giangvien(giangVien * gv, int& quantity) {
+    int found = 0;
+    unsigned long id;
+    cout<<"Nhap id giang vien: ";
+    cin>>id;
+    for(int i = 0; i < quantity; i++) {
+        if (gv[i].id == id) {
+            found = 1;
+            for (int j = i; j < quantity-1; j++) {
+                gv[i] = gv[i+1];
+            }
+            quantity --;
+            cout << "Xoa thanh cong: " << id << endl;
+            break;
+        }
+    }
+    if (found == 0) cout << "khong tim thay id nay!!!!";
+}
+
 void giangVien ::outSalary_5yearsLater(giangVien * Giangvien, int quantity) {
     unsigned long ID;
-    cout << "nhap ID can sua: ";
+    cout << "nhap ID: ";
     cin >> ID;
     for (int i = 0; i < quantity; i++){
-        if (ID == Giangvien->id){
-            int luong = Giangvien->salary;
+        if (ID == Giangvien[i].id){
+            int luong = Giangvien[i].salary;
             luong += luong*(0.05*5);
-            cout << "Luong du kien sau 5 nam cua ban: " << luong;
+            cout << "Luong du kien sau 5 nam cua ban: " << luong << endl;
             break;
         }
     }

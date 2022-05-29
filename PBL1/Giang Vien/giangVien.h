@@ -21,13 +21,12 @@ class giangVien : public Person{
     int classSize;
 
 public:
-    giangVien(){};
     void nhap();
     void xuat();
-    void nhapMang(giangVien*, int);
+    void nhapMang(giangVien*, int &);
     void xuatMang(giangVien*, int);
     void update_in4(giangVien*, int);
-
+    void xoa_Giangvien(giangVien*,int &);
     void outSalary(giangVien*, int);
     void outSalary_5yearsLater(giangVien*, int);
     void outStudent(giangVien*);

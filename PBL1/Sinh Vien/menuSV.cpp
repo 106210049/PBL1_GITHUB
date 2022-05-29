@@ -6,10 +6,10 @@
 #include "menuSV.h"
 using namespace std;
 
-Sinhvien *sv=new Sinhvien[2];
+Sinhvien *sv=new Sinhvien[100];
+static int length=1;
 int hamchucnang(int &chucnang)
 {
-    int length=2;
     Chucnang:
     switch(chucnang)
     {
@@ -21,7 +21,6 @@ int hamchucnang(int &chucnang)
             break;
         case 2:
             sv->Arrangeforgpa(sv,length);
-            cout<<"Chuc nang 2 da duoc goi"<<endl;
             break;
         case 3:
             sv->Arrangeformssv(sv,length);
@@ -36,6 +35,7 @@ int hamchucnang(int &chucnang)
             sv->xeploai(sv,length);
             break;
         case 7:
+            cout<<"chuc nang 7 duoc goi"<<endl;
             sv->XoatheoMSSV(sv,length);
             break;
         case 8:

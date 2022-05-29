@@ -6,8 +6,7 @@
 #include "Sinhvien.h"
 
 using namespace std;
-Sinhvien ::Sinhvien() {}
-Sinhvien ::~Sinhvien() {}
+
 void Sinhvien::timKiemTheoTen(Sinhvien *sv, int &length)
 {
     Sinhvien *arrayFound=new Sinhvien[100];
@@ -31,15 +30,17 @@ void Sinhvien::timKiemTheoTen(Sinhvien *sv, int &length)
 int Sinhvien::XoatheoMSSV(Sinhvien *sv, int &length)
 {
     int found = 0;
-    unsigned long id=0;
+    unsigned long id;
     cout<<"Nhap ma so sinh vien can xoa khoi danh sach: "<<endl;
     cin>>id;
     for(int i = 0; i < length; i++) {
         if (sv[i].mssv == id) {
             found = 1;
-            for (int j = i; j < length; j++) {
-                sv[j] = sv[j+1];
+            for (int j = i; j < length-1; j++) {
+                  sv[i] = sv[i+1];
             }
+            length --;
+
             cout << "\n Da xoa SV co ID = " << id;
             break;
         }
@@ -55,7 +56,7 @@ int Sinhvien::XoatheoMSSV(Sinhvien *sv, int &length)
 void Sinhvien::Update_information_MSSV(Sinhvien &sv)
 {
     fflush(stdin);
-    cin.getline(sv.name,30);
+    cin.getline(sv.name,100);
     cout<<"Nhap ma so sinh vien: ";
     cin>>sv.mssv;
     cout<<"Nhap gioi tinh: ";
@@ -70,6 +71,7 @@ void Sinhvien::Update_information_MSSV(Sinhvien &sv)
     cout<<"\n Nhap diem: ";
     cin>>sv.gpa;
 }
+
 void Sinhvien::update(Sinhvien *sv, int &length)
 {
     int found=0;
@@ -78,7 +80,7 @@ void Sinhvien::update(Sinhvien *sv, int &length)
     cin>>id;
     for(int i=0;i<length;i++)
     {
-        if(sv[i].mssv=id)
+        if(sv[i].mssv==id)
         {
             found=1;
             cout<<"Cap nhat thong tin cho sinh vien co ma so sinh vien la: "<<id<<endl;
@@ -120,15 +122,15 @@ void Sinhvien::xeploai(Sinhvien *sv, int &length)
         {
             strcpy(sv[i].hocluc,"Xuat sac");
         }
-        if(sv[i].gpa>=8)
+        else if(sv[i].gpa>=8)
         {
             strcpy(sv[i].hocluc,"Gioi");
         }
-        if(sv[i].gpa>=6.5)
+        else if(sv[i].gpa>=6.5)
         {
             strcpy(sv[i].hocluc,"Kha");
         }
-        if(sv[i].gpa>=5)
+        else if(sv[i].gpa>=5)
         {
             strcpy(sv[i].hocluc,"Trung binh");
         }
@@ -174,31 +176,36 @@ void Sinhvien::Arrangeformssv(Sinhvien *sv, int &length)
     }
 }
 
-void Sinhvien::Nhap(Sinhvien *sv, int length)
+void Sinhvien::Nhap(Sinhvien *sv, int &length)
 {
-    for(int i=0;i<length;i++)
+    char i;
+    do
     {
-        cout<<"Nhap ho va ten cho sinh vien thu "<<i<<": ";
+        cout<<"Nhap ho va ten cho sinh vien thu "<<length<<": ";
         fflush(stdin);
-        cin.getline(sv[i].name,30);
+        cin.getline(sv[length -1].name,100);
         cout<<"Nhap ma so sinh vien: ";
-        cin>>sv[i].mssv;
+        cin>>sv[length - 1].mssv;
         cout<<"Nhap gioi tinh: ";
         fflush(stdin);
         getline(cin,sex);
-        cout<<"Nhap ngay thang nam sinh cua sinh vien thu "<<i<<" : ";
+        cout<<"Nhap ngay thang nam sinh cua sinh vien thu "<<length<<" : ";
         fflush(stdin);
-        getline(cin,sv[i].birth);
+        getline(cin,sv[length - 1].birth);
         cout<<"Nhap khoa: ";
         fflush(stdin);
-        getline(cin,sv[i].department);
+        getline(cin,sv[length -1].department);
         cout<<"\n Nhap diem: ";
-        cin>>sv[i].gpa;
-    }
+        cin>>sv[length - 1].gpa;
+        cout << "Ban co muon nhap them- nhan 'c' de tiep tuc- nhan 'k' de thoat !!" << endl;
+        cin >> i;
+        if (i == 'k') break;
+        else length++;
+    } while (true);
     menuSV();
 }
 
-void Sinhvien::Xuat(Sinhvien *sv, int length)
+void Sinhvien::Xuat(Sinhvien *sv, int &length)
 {
     for(int j=0;j<length;j++) {
         cout << "----------------------------------------------" << endl;
@@ -210,3 +217,4 @@ void Sinhvien::Xuat(Sinhvien *sv, int length)
         cout << "Xep loai: " << sv[j].hocluc << endl;
     }
 }
+

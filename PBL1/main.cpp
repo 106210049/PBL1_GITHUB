@@ -23,28 +23,33 @@ void xulyMENU(){
     int tmp;
     switch (chooseMain()) {
         case 1:
-            menuGV();
-            cout<<"Nhap phim 99 de tiep tuc chuc nang: "<<endl;
-            cin>>tmp;
-            if(tmp==99){
-                menuSV();
-            }
-            else{
-                cout<<"Thoat chuong trinh"<<endl;
-                exit(0);
+            while(1)
+            {
+                menuGV();
+                cout << "nhap so 999 de thoat!!! ---- neu ko muon thoat nhap khac 999: ";
+                int tmp;
+                cin >> tmp;
+                if(tmp == 999) {
+                    menu();
+                    break;
+                }
+                else menuGV();
             }
             break;
         case 2:
-            menuSV();
-            cout<<"Nhap phim 99 de tiep tuc chuc nang: "<<endl;
-            cin>>tmp;
-            if(tmp==99){
+            while(1)
+            {
                 menuSV();
+                cout << "nhap so 999 de thoat!!! ---- neu ko muon thoat nhap khac 999: ";
+                int tmp;
+                cin >> tmp;
+                if(tmp == 999) {
+                    menu();
+                    break;
+                }
+                else menuSV();
             }
-            else{
-                cout<<"Thoat chuong trinh"<<endl;
-                exit(0);
-            }
+
             break;
     }
 }
